@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Simple CSS Layout</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='header.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='sections.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='footer.css') }}">
+    </head>
+    <body>
+        <header>
+            <a href="#" id="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                    <path d="M5 1v8H1V1h4zM1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm13 2v5H9V2h5zM9 1a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9zM5 13v2H3v-2h2zm-2-1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3zm12-1v2H9v-2h6zm-6-1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H9z"/>
+                </svg>
+                <span>Layout</span>
+            </a>
+            <label for="main-nav">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                </svg>
+            </label>
+            <input type="checkbox" id="main-nav">
+            <nav>
+                <ul>
+                    {% for n in nav %}
+                        <li><a href="#{{ n.link }}">{{ n.text }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </header>
+        <main>
+            {% for t in text %}
+                <section class="{{ t.type }}" id="{{ t.link }}">
+                    <h1>{{ nav[loop.index0]["text"] }}</h1>
+                    {% for a in t.content %}
+                    <article>
+                        <img src="{{ a.image }}" alt="{{ a.title }}">
+                        <small>{{ a.category }}</small>
+                        <h2>{{ a.title }}</h2>
+                        <small>
+                            <a href="#">{{a.author}}</a>
+                            <span>{{a.posted}}</span>
+                        </small>
+                    </article>
+                    {% endfor %}
+                </section>
+            {% endfor %}
+        </main>
+        <footer>
+            <div class="box">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="https://faker.readthedocs.io/en/master/">Faker</a></li>
+                    <li><a href="https://icons.getbootstrap.com/">Bootstrap Icons</a></li>
+                </ul>
+            </div>
+            <div class="box">
+                <h3>Content</h3>
+                <ul>
+                    {% for n in nav %}
+                    <li><a href="#{{ n.link }}">{{ n.text }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="box wide">&copy; CodeCool</div>
+        </footer>
+    </body>
+</html>

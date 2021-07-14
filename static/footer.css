@@ -1,0 +1,24 @@
+footer {
+    background: #333;
+    margin: 2em -1em -1em -1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    color: #ddd;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer .box {
+    flex-basis: 50%;
+}
+
+footer .box.wide {
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 2em;
+}

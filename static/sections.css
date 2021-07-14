@@ -87,3 +87,49 @@ article h2 {
     justify-content: initial;
     gap: 1em;
 }
+
+@media (min-width: 50em) {
+    section {
+        max-width: 60em;
+        margin: 0 auto;
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main {
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr;
+        grid-auto-flow: dense;
+        gap: 1em;
+    }
+
+    .main h1 {
+        grid-column: 1 / -1;
+    }
+
+    .main article:first-of-type {
+        grid-column: 1 / 2;
+        grid-row: 2 / 5;
+    }
+
+    .feed {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+
+    .feed h1 {
+        grid-column: 1 / -1;
+    }
+
+    .feed article {
+        padding: 1em 0 0;
+    }
+}

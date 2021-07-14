@@ -22,3 +22,13 @@ footer .box.wide {
     text-align: center;
     margin-top: 2em;
 }
+
+@media (min-width: 40em) {
+    footer {
+        flex-wrap: nowrap;
+    }
+
+    footer .box.wide {
+        margin-top: 0;
+    }
+}

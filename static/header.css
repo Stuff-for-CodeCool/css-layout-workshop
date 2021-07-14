@@ -51,3 +51,24 @@ header li {
     line-height: 2;
     flex-basis: 50%;
 }
+
+@media (min-width: 50em) {
+    header {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 60em;
+    }
+
+    header label {
+        display: none;
+    }
+
+    header nav {
+        display: block;
+        padding: 1em 0;
+    }
+
+    header ul {
+        flex-wrap: nowrap;
+    }
+}

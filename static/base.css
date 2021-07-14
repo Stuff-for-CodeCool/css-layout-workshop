@@ -5,3 +5,48 @@
     margin: 0;
     padding: 0;
 }
+
+html {
+    font-family: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif",
+        Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif",
+        Georgia, serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background: #eee;
+    color: #333;
+}
+
+h1,
+h2,
+a {
+    font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans",
+        "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed",
+        "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue",
+        Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: #a22;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
